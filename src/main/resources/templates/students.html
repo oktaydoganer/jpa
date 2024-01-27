@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+    <table>
+        <tr th:each="student: ${studentList}">
+            <td>
+                <span>
+                    <a th:href="@{'/student/' + __${student.id}__}">Göster</a>
+                </span>
+            </td>
+            <td>
+                <span th:text="${student.name}" />
+            </td>
+            <td>
+                <span th:text="${student.surname}" />
+            </td>
+            <td>
+                <a th:href="@{'/delete/' + __${student.id}__}">Sil</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
